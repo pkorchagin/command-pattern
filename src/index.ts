@@ -5,12 +5,12 @@ import Invoker from './Invoker'
 import Receiver from './Receiver'
 import { StartCommand, StopCommand, ResetCommand, CommandsQueue } from './commands'
 
-const invoker = new Invoker()
 const receiver = new Receiver()
 const commandStart = new StartCommand(receiver)
 const commandStop = new StopCommand(receiver)
 const commandReset = new ResetCommand(receiver)
 const commandsQueue = new CommandsQueue(receiver, commandStart, commandReset, commandStop)
+const invoker = new Invoker()
 
 invoker
     .set(commandStart)
