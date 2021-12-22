@@ -4,18 +4,18 @@ import Receiver from '../Receiver'
 class StopCommand extends Command {
     private receiver
 
-    constructor(receiver: Receiver) {
+    public constructor(receiver: Receiver) {
         super()
         this.receiver = receiver
         log('StopCommand instance CREATED')
     }
 
-    execute() {
+    public execute(): void {
         log('StopCommand: EXECUTE')
         this.receiver.stop()
     }
 
-    undo() {
+    public undo(): void {
         log('StopCommand: UNDO')
         this.receiver.start()
     }

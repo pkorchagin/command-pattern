@@ -1,19 +1,19 @@
 import { IStartable, IStoppable, IResettable } from './interfaces'
 
 class Receiver implements IStartable, IStoppable, IResettable {
-    constructor() {
+    public constructor() {
         log('Receiver instance CREATED')
     }
 
-    start(): void {
+    public start(): void {
         log('Receiver: START')
     }
 
-    stop(): void {
+    public stop(): void {
         log('Receiver: STOP')
     }
 
-    reset(): void {
+    public reset(): void {
         log('Receiver: RESET')
     }
 }

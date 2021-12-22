@@ -5,19 +5,19 @@ class CommandsQueue extends Command {
     protected receiver
     protected commands
 
-    constructor(receiver: Receiver, ...commands: Command[]) {
+    public constructor(receiver: Receiver, ...commands: Command[]) {
         super()
         this.commands = commands
         this.receiver = receiver
     }
-    execute() {
-        log('CommandsQueue: EXECUTE')
+
+    public execute(): void {
         for (const command of this.commands) {
             command.execute()
         }
     }
-    undo() {
-        log('CommandsQueue: UNDO')
+
+    public undo(): void {
         for (const command of this.commands) {
             command.undo()
         }

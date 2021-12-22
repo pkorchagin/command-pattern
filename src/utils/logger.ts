@@ -8,7 +8,21 @@ const custom = (...args: any): void => {
     const milliseconds = '0' + date.getMilliseconds()
     const formattedTime = hours + ':' + minutes.slice(-2) + ':' + seconds.slice(-2) + ':' + milliseconds
     args.unshift(`ⓣ ${formattedTime} ⓜ `)
-    defaultConsoleLog.apply(null, args)
+    const formatted = args.map((arg: any) => {
+        if (Array.isArray(arg)) {
+            return arg.map((item) => {
+                if (item.constructor.name) {
+                    return `${item.constructor.name}`
+                } else {
+                    return item
+                }
+            })
+        } else {
+            return arg
+        }
+    })
+
+    defaultConsoleLog(...formatted)
 }
 
 console.log = custom

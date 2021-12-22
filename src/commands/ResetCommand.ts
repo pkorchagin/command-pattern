@@ -4,18 +4,18 @@ import Receiver from '../Receiver'
 class ResetCommand extends Command {
     private receiver
 
-    constructor(receiver: Receiver) {
+    public constructor(receiver: Receiver) {
         super()
         this.receiver = receiver
         log('ResetCommand instance CREATED')
     }
 
-    execute() {
+    public execute(): void {
         log('ResetCommand: EXECUTE')
         this.receiver.reset()
     }
 
-    undo() {
+    public undo(): void {
         log('ResetCommand: UNDO [Reset undoing is not possible]')
     }
 }

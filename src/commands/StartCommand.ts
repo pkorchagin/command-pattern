@@ -4,17 +4,17 @@ import Receiver from '../Receiver'
 class StartCommand extends Command {
     protected receiver
 
-    constructor(receiver: Receiver) {
+    public constructor(receiver: Receiver) {
         super()
         this.receiver = receiver
         log('StartCommand instance CREATED')
     }
 
-    execute() {
+    public execute(): void {
         log('StartCommand: EXECUTE')
         this.receiver.start()
     }
-    undo() {
+    public undo(): void {
         log('StartCommand: UNDO')
         this.receiver.stop()
     }

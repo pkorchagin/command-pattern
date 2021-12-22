@@ -4,7 +4,7 @@ import { IExecutable, IUndoable, ICanSetCommand as ICanSetCommandForYouSelf } fr
 class Invoker implements IExecutable, IUndoable, ICanSetCommandForYouSelf {
     protected command: Command
 
-    constructor() {
+    public constructor() {
         log('Invoker instance CREATED')
     }
 
