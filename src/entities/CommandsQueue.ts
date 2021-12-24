@@ -1,11 +1,11 @@
-import Command from '../Command'
-import Receiver from '../Receiver'
+import { AbstractCommand } from '../abstract'
+import Receiver from './Receiver'
 
-class CommandsQueue extends Command {
+class CommandsQueue extends AbstractCommand {
     protected receiver
     protected commands
 
-    public constructor(receiver: Receiver, ...commands: Command[]) {
+    public constructor(receiver: Receiver, ...commands: AbstractCommand[]) {
         super()
         this.commands = commands
         this.receiver = receiver

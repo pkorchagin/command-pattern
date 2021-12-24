@@ -1,7 +1,7 @@
-import Command from '../Command'
-import Receiver from '../Receiver'
+import { AbstractCommand } from '../abstract'
+import Receiver from './Receiver'
 
-class StartCommand extends Command {
+class StartCommand extends AbstractCommand {
     protected receiver
 
     public constructor(receiver: Receiver) {

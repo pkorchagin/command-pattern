@@ -1,4 +1,4 @@
-import { IStartable, IStoppable, IResettable } from './interfaces'
+import { IStartable, IStoppable, IResettable } from '../interfaces'
 
 class Receiver implements IStartable, IStoppable, IResettable {
     public constructor() {

@@ -1,5 +1,5 @@
-import Command from '../Command'
+import { AbstractCommand } from '../abstract'
 
 export default interface ICanSetCommand {
-    set(command: Command): void | this
+    set(command: AbstractCommand): void | this
 }
