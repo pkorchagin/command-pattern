@@ -10,7 +10,7 @@ const commandsQueue = new CommandsQueue(receiver, commandStart, commandReset, co
 const invoker = new Invoker()
 
 log('---- instant execution without using the set method, and with using a static method ----')
-InstantInvoker.execute(new ResetCommand(new Receiver()))
+InstantInvoker.execute(new ResetCommand(new Receiver())).set(commandReset).execute()
 
 log('---- deferred execution ----')
 invoker

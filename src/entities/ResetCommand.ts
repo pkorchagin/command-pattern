@@ -7,16 +7,14 @@ class ResetCommand extends AbstractCommand {
     public constructor(receiver: Receiver) {
         super()
         this.receiver = receiver
-        log('ResetCommand instance CREATED')
     }
 
     public execute(): void {
-        log('ResetCommand: EXECUTE')
         this.receiver.reset()
     }
 
     public undo(): void {
-        log('ResetCommand: UNDO [Reset undoing is not possible]')
+        log(`${this.constructor.name}: UNDO [Reset undoing is not possible]`)
     }
 }
 

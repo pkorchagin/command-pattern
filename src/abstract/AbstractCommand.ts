@@ -1,9 +1,20 @@
 import { IExecutable, IUndoable } from '../interfaces'
 
 abstract class AbstractCommand implements IExecutable, IUndoable {
-    public abstract execute(): void
+    private readonly name: string
 
-    public abstract undo(): void
+    protected constructor() {
+        this.name = this.constructor.name
+        log(`${this.name} instance CREATED`)
+    }
+
+    public execute(): void {
+        log(`${this.name}: EXECUTE`)
+    }
+
+    public undo(): void {
+        log(`${this.name}: UNDO`)
+    }
 }
 
 export { AbstractCommand }
